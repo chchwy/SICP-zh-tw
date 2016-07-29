@@ -1,6 +1,7 @@
 # 練習 (Exercise)
 
 ## Exercise 1.1.
+
 Below is a sequence of expressions.What is the result printed by the interpreter in response to each expression?Assume that the sequence is to be evaluated in the order in which it is presented.
 
 下為一系列的表達式。解譯器對每一條表達式打印的結果會是怎樣？假設如下表達式運算的順序和它們書寫的順序一致。
@@ -25,7 +26,7 @@ Below is a sequence of expressions.What is the result printed by the interpreter
 				((< a b) b)
 				(else -1))
 		(+ a 1))
-		
+
 ## Exercise 1.2.
 Translate the following expression into prefix form
 
@@ -34,7 +35,7 @@ Translate the following expression into prefix form
 	5 + 4 + (2 - (3 - (6 + 4/3)))
 	-----------------------------
 			3(6 - 2)(2 - 7)
-				
+
 ## Exercise 1.3.
 Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.
 
@@ -47,7 +48,7 @@ Observe that our model of evaluation allows for combinations whose operators are
 
 	(define (a-plus-abs-b a b)
 		((if (> b 0) + -) a b))
-		
+
 ## Exercise 1.5.
 Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation.He defines the following two procedures:
 
@@ -55,16 +56,16 @@ Ben Bitdiddle發明了一個測試來判斷他用的解譯器是應用次序求�
 
 	(define (p) (p))
 	(define (test x y)
-		(if (= x 0) 
-			 0 
+		(if (= x 0)
+			 0
 			 y))
-			 
+
 Then he evaluates the expression
 
 然後他對如下表達式求值
 
 	(test 0 (p))
-	
+
 What behavior will Ben observe with an interpreter that uses applicative-order evaluation?What behavior will he observe with an interpreter that uses normal-order evaluation?Explain your answer.(Assume that the evaluation rule for the special form **if** is the same whether the interpreter is using normal or applicative order:The predicate expression is evaluated first,and the result determines whether to evaluate the consequent or the alternative expression.)
 
 在一個使用應用次序求值的解譯器中Ben會觀察到什麼行為?在一個使用正常次序求值的解譯器中Ben會觀察到什麼行為?解釋你的答案。(假設無論在正常次序或者應用次序中特殊格式**if**的求值都是一樣的:首先對判定表達式進行求值,並且由其結果決定對結果還是其他候選表達式求值。)
